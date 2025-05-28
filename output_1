@@ -1,0 +1,123 @@
+.venv(base) akash.krishnan@akashkrishnan-MacBook-Pro SAP_to_PBI % python /Users/akash.krishnan/Documents/SAP_to_PBI/wid_script_SAP.py \
+  /Users/akash.krishnan/Documents/SAP_to_PBI/ \
+  /Users/akash.krishnan/Documents/SAP_to_PBI/
+
+=== Processing WID: aevo709pbwraqzmfl ===
+Traceback (most recent call last):
+  File "/Users/akash.krishnan/Documents/SAP_to_PBI/wid_script_SAP.py", line 667, in <module>
+    main()
+  File "/Users/akash.krishnan/Documents/SAP_to_PBI/wid_script_SAP.py", line 662, in main
+    extract_comprehensive_metadata(os.path.join(args.input, file), args.output)
+  File "/Users/akash.krishnan/Documents/SAP_to_PBI/wid_script_SAP.py", line 649, in extract_comprehensive_metadata
+    write_comprehensive_outputs(metadata, basename, output_dir)
+  File "/Users/akash.krishnan/Documents/SAP_to_PBI/wid_script_SAP.py", line 543, in write_comprehensive_outputs
+    filter_df.to_excel(writer, sheet_name='Query Filters', index=False)
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 2417, in to_excel
+    formatter.write(
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/formats/excel.py", line 952, in write
+    writer._write_cells(
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/excel/_openpyxl.py", line 490, in _write_cells
+    xcell.value, fmt = self._value_with_fmt(cell.val)
+    ^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openpyxl/cell/cell.py", line 218, in value
+    self._bind_value(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/openpyxl/cell/cell.py", line 197, in _bind_value
+    value = self.check_string(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openpyxl/cell/cell.py", line 165, in check_string
+    raise IllegalCharacterError(f"{value} cannot be used in worksheets.")
+openpyxl.utils.exceptions.IllegalCharacterError: the Sentinel 
+application stores its data.
+
+Universe Developer: Aaron Garcia
+Business Contacts: Melissa Gilmore, Frino Alcenat
+Universe Review Dt: 5/15/2024
+ The Sentinel Nuclear PI universe is sourced from the Sentinel application used in the Nuclear facilities for tracking and 
+recording radiation dosage levels. The universe uses a near real time connection to an Oracle database where the Sentinel 
+application stores its data.
+
+Universe Developer: Aaron Garcia
+Business Contacts: Melissa Gilmore, Frino Alcenat
+Universe Review Dt: 5/15/2024
+ kThe SS Daily Activity universe is obtained data from Service Suite(Construction Details for Work Orders and Work Requests) and Passport(Design Details for Designs and Service Requests) Sources. This is built on Teradata Warehouse. The passport tables are refreshed from source for every 3 hours and Service Suite tables are refreshed from source on nightly basis.pThe Supply Chain universe has information about shipments, inventory, suppliers, branches/stores and warehouses.The universe access data from the "PCIIM" third party application. A nightly process loads the data into the tables and views used in the universe.The universe accesses data from the PCI (third party) application. A nightly process loads the data into the tables and views used in the universe.9The Universe is built based on the "PowerSource VCM (Vignette Content Management)" system data. It would allow reporting on PowerSource Pages, their Authors, Content Date Review, Secure Content, Page attributes, and Pages tagged as Confidential.
+Source System - VCM (XN2P Oracle Database)
+Data Refresh - Nightly. The Universe is created to report on datasets used to evaluate usage and revenue summary and detail data for XCEL account managers to negotiate franchise fees with various city managers.
+
+ETL Developer - Robert Ham
+
+Reference - Mercury Ticket # 3456499The Universe provides data for Trouble Technician Timesheet and Expense reports. This is built against the Service Suite HDB data in Teradata Warehouse and it is updated nightly.}The Wind Farms universe contains Wind Farm operational data including Site Information, Control/Uncontrol instances, Events, Monthly, and Yearly performance data.  
+The data source is the Teradata EODSWINDViews database which is sourced from spreadsheets generated from Vestas Online Business reports that are run monthly 
+and copied to the EODSWINDViews tables via Informatica. The Work Orders universe contains the FA Suite Fleet work order data, including Parts, Labor, Commercial, Tasks, Services and Delays. 
+--Examples of FA Suite Application Screens Included: Work Order Center (2037), Multi-Unit Projects - Equipment List (2081)
+--Examples of FA Suite Application Tabs Included: Basic Info (189), 3C Summary (8065), More Info (209), Delay (196), Files (7769),
+Shared Info (318), Service Requests/Defects (266), Tasks (191), Labor (193), Parts (194), Commercial (195)
+
+All table fields requested in anticipation of repurposing fields.
+X DtTm Insert and X Userid Insert type fields requested from each table used.This is an unmodified conversion from UDT.
+
+The Fuelworx database goes directly against the Fuelworx application which manages the coal inventory for the company.qThis is a subset of the larger Riskmaster Universes and is streamlined for Safety reporting. Author: John FellingThis is a universe specifically designed to hold connections to data that is not sensitive but needs to be available in a Webi or other reporting tools. Restricted or sensitve data should not be used in this universe.This is the universe for Conversion of Brio Queries to BO reports. This universe is to be based upon Content Management databases. This universe has last been updated on 02-June-2008.7This is the universe for "Gas Odor Assurance" Reports. rThis is the Universe Used for Passport Supply Chain - BRIO Reports. The universe was last updated on 25-June-2008.hThis universe allows access to the Korterra data to provide reporting for the Sewer Mitigation endeavor.
+        This universe can be used for reporting on the subject areas of Invoices, Invoice Lines, Invoice Transactions and Invoice Costs.It consists of the Maximo source tables that have been brought into the EODS.
+
+Data Source - EODS Maximo tables
+Data Refresh - Nightly loadThis universe can be used for reporting on the subject areas of Purchansing and Purchase Requisition.It consists of the Maximo source tables that have been brought into the EODS.
+
+Data Source - EODS Maximo tables
+Data Refresh - Nightly loadThis universe can be used to report data from all versions that reside in the CBS Consolidated budget system.  It contains unallocated budget and forecast records, with actuals copied into forecast after close.]This universe captures everything from PeopleSoft and contains all versions of the employees.FThis universe consists of the Aged Debt from QDB for the current week.This universe contains approved expenses from the Sum Total system and integrates it with the JDEdwards business unit hierarchy and account hierarchy.eThis universe contains customer data and is designed is to reconcile tax exemption customers between the CRS system and the Vertex Exemption Certificate Manager (ECM) application. It also reconciles the values (such as name, address, etc.) associated with the exemption customer IDs.
+The source systems are CRS and Vertex, and the tables are updated daily.gThis Universe contains data about Substations, Substation Facilities and Equipment, Equipment Ratings, Facility Ratings, and related Equipment data from PassPort. Transmission Line data that pertains to Facility Ratings is also included. The Universe is built for Transmission as a part of "Geospatial Information System for Transmission - Phase 3" (GIST3) Project. 
+
+Data Refresh - Daily at 8:30 am.
+
+Source Systems - 1) CFD (Common Format Data) Database 
+                             2) Passport (Asset and Work Management System).
+                             3) SAP Equipment/Functional Location info. (SAP ECC)This universe contains expenses from the Sum Total system, and integrates it with the JDEdwards business unit hierarchy and account hierarchy.This universe contains information from source system SAP IS-U for meter management rebuilt during the REMODL MDMS projects wrapping up in 2024.
+
+It was originally created for Gas Compliance Tracking project. It is used to generate report for Routine meters related tables.aThis universe contains static archived data from the ILM application specific to the Labworks application. This is the retired application that houses historical chemisty laboratory sample data and analysis results.  This data source  will be utilized by System Lab and Environmental Services to develop reports for accessing archived chemistry data.
+ This universe has a combination of data from -
+1.POM system - this is the data that we get from the Proactive Outreach manager about the various campaigns that we run such as Debtor Ids,attempted phone nbr,disposition codes etc.
+2.QWEST - this is the call log of all the customers who called back the Xcel customer care after a campaign.
+Both this data is linked via the CRS data to create the Spill Analysis, Campaign SUmmary reports etc.This universe has information about the assessment forms such as assessor details, evaluatee, form component and scores for each question in the form etc. It is sourced against the QM SQL Server (vqmcplc02).This universe has information about the evaluation forms such as evaluator details, evaluatee,form component and scores for each question in the form etc. It is sourced against the QM SQL Server (vqmcplc02).nThis universe has tables from the Employee subject area of the Verint WFM (Work Force Management) application.This universe has transmission data and has information about the System Protection Alarm Channel. And the source is the EMS database. And this source table data is parsed and broken down into equip nm,alarm pair,alarm  type etc in the Teradata datawarehouse.BThis universe has transmission data and has information about the System Protection Alarm Channel for NSP. And the source is the EMS database. And this source table data is parsed and broken down into equip nm,alarm pair,alarm  type etc in the Teradata datawarehouse.
+Date Refresh - daily at 8:30 am
+Source - EMS Database
+kThis universe is a subset of the delivered Trouble Reporting Universe. Sourced from Teradata EMartPDMViews.This universe is based on new tables that were created in BO repository that are used to store BO audit. These tables store information regarding usage of FO Mgmt reports.This universe is based upon Content Manager database on DB2 platform. This universe has last been updated on 11/20/2013
+
+Last Updated - 12/29/2015
+Developer - Sowrabha Sadanand
+Content Management Universe has been moved to Content Manager as part of PTT WAM. Content Management Universe will be no longer avaiable.
+
+Last Updated - 3/24/2016
+Developer - Sowrabha Sadanand
+8 New Certificate Type tables and corresponding objects have been added.
+
+This universe is based upon Content Manager database on DB2 platform. This universe has last been updated on 11/20/2013
+
+Last Updated - 12/29/2015
+Developer - Sowrabha Sadanand
+Content Management Universe has been moved to Content Manager as part of PTT WAM. Content Management Universe will be no longer avaiable.
+
+Last Updated - 3/24/2016
+Developer - Sowrabha Sadanand
+8 New Certificate Type tables and corresponding objects have been added.
+
++This universe is built against the Service Order Completion data in Teradata Warehouse and it is updated nightly.
+Data is sourced from SAP ECC using file extraction process.
+The universe contains information on orders, order assignments, order visits, technician details and order status reports. This universe is current snapshot of the customer data and has details such as current balance , past due amount , Late Notice details, Disconnect Date details etc.HThis universe is for Call Driver Phase 2.
+
+Converted to UNX on 12/2018vThis universe is for Gas Compliance Tracking project. It is used to generate report for Routine meters related tables.|This universe is primarily for Tax reporting and consists of data that has been integrated from Passport and Maximo systems.This universe is restricted to companies 10, 11, 12, and 13.  This universe is directed against the Outbound JDE table and is updated nightly.oThis universe is sourced from the Plateau database and provides information for the Learning Management System.{This universe is sourced from the Plateau database (PX tables) and provides information for the Learning Management System.This universe is Transmission data (from SAP, Primavera P6, and TamCast) organized for use in Transmission dashboards/reporting.This Universe is used by call Center reports. It used SQL server as the DB. It basically contains teh Call details fact table which gets loaded from the flat file using the Script. Call completion D and vwAreacodePrefixandcities are just used as lookup tables. vwAreacodePrefixandcities gets loaded once a month. So, it is possible that we might get some new NPA's and NXX's. It has an outer join so that we get all the records from call details fact table.This universe is used for Data Analysis and it is sourced from the Plateau database (PA tables) and provides information for the Learning Management System.This universe is used for Data Analysis and it is sourced from the Plateau database (PH tables) and provides information for the Learning Management System..This universe is used for generation of custom reports from Service Suite (Advantex) application version 9.2. The universe contains information on Gas Non Outage Orders and Electric Non Outage Orders information.This is built against the Service Suite HDB application database and it has realtime data.JThis universe is used for generation of custom reports from Service Suite (Advantex) application version 9.2. The universe contains information on orders, order assignments, order visits, technician details and order status reports. This is built against the Service Suite HDB data in Teradata Warehouse and it is updated nightly.This universe is used for Reports based on Passport Material Requisition, Assignment and Manufacturing Details. Last Updated on 30-May-2008xThis universe is used for Supply Chain reporting for On time In full. It contains data from Passport and Maximo systems.This universe is used for Supply Chain reporting for the subject areas within it i.e Inventory Values & Turns, Purchase Basis , On time In full,PO Automated and Supplier Diversity. And it contains data from Passport and Maximo systems.This Universe is used for the AMI Wave 9 Reporting Sourced from Teradata Tables (AMI_A383_Survey_Text, AMI_A384_Survey_Email, AMI_A385_Survery_NoErt, AMI_A386_PostInstall_Survey, AMI_A387_Pulse_Survey).
+This Universe is used for the AMI Wave 9 Reporting Sourced from Teradata Tables (AMI_A383_Survey_Text, AMI_A384_Survey_Email, AMI_A385_Survery_NoErt, AMI_A386_PostInstall_Survey, AMI_A387_Pulse_Survey,AMI_A368_GREEN_BUTTON_CMD ).
+zThis Universe is used to build the Outage Activity Dashboard using NRT (Near Real Time) views from Teradata EMartPDMViews.hThis Universe is used to build the Outage Activity Restoration Activity Reports using EMARTPDMViews.
+
+07/21/2024 Update (HBLM03): Add MV_PICKLIST_COMPLETION_LOG and MV_PICKLIST_INFO_UPD_TR for AMI Wave 9 rptg.
+--WebI: PF / Customer Relations / General / Metering / AMI Value Realization / AMI Outage Efficiency Costs (name might chg but path should be same)XThis universe is used to compare Actual vs Estimate labor and non labor amounts by Cost Break down Structure (CBS) and work breakdown structure (WBS).
+
+Sources: Actuals are from JDE and Estimates are from Hard Dollar (HD).
+
+Data Frequency: Directly against replicated database tables in the ODS in Teradata environment, which is loaded nightly.fThis universe is used to generate two reports IVR Event report and IVR Terminal Method Summary report.This Universe is Used to get Employee Information, The Key areas used from this universe are Business Area, Company, Employee Info, Business Function, Manager Level etcThis Universe is used to provide PowerPlan Joint Venture allocations detail.  The current PowerPlan Reconciliation Report in BW does not provide this information because of how PowerPlan posts back charges unique to the Sherco JV. This universe provides access to information on customers who opt in the Proactive Notification program and the history of callbacks made to each customersQThis Universe provides data for Trouble Technician Timesheet and Expense reports.eThis universe provides data from various Transmission department systems focused on In Service Dates."This universe provides system information about employees and contractors defined on the System IT database.  Please note that the SystemIT database does not contain the network ID for subsidiary users. The data stored in the Network ID object for these users is probably their employee ID.FThis universe provides the ability to trace back from the regulatory view accounting data to the business view accounts.  The trackback universe should only be used to link the regulatory account to its originating account in the business view.  For reporting on regulatory view data only, the JDE GL Summary or Details universe should be used instead.  This universe goes against the Near-time universe, updated every 1 to 3 minutes from JDE.  This universe does not contain the beginning balances, use the JDE Near-Time Trackback Reg - Beg Bal universe for  these type of reports.WThis universe reports information from the material area of IKW. IKW is updated nightlyThis Universe was created on 02/03/2005. Thsi universe is used in MaxTax.rep. The row limit size is increased to 50,000 in this universe.This uses Maximo Replicated Database.This universe was setup to audit data loads from Power System Center(PSC) to SQL Server Database. This is a standalone type universe. DO NOT combine objects from different classes in one query.This universe was setup to query equipment, functional location and maintainance details from SAP, Power Systems Center(PSC) and PowerBase(for legacy test dates). This universe will be used for doing the campaign effectiveness reporting on a weekly and monthly basis. And would help to track the payments made by the Contact/Control group before and after a campaign is run.nThis universe will be used for Transmission business unit dashboards. Data is based on on a view in Teradata. This universe will be used to compare data related to outage events amoung OPS, PDM and RED database for North. Sourced from Teradata EMartPDMViews.This universe will show the training classes that students are registered for, etc. The data is from the LMS Plateau tables and is updated dynamically. XThis universe would be used by the Supply Chain team for security and auditing purposes.This universe would be used for providing Call center agent information such as employment details , position , team, quality monitoring and IPAD details. This is based on the REM SQL Server database.*Tracks application status on iPad devices.+Trans External Vendor Forecast and details Transformer seasonal peak data archived from Distribution Asset Analysis tool (actuals through 2020).
+
+Due to volume and Business request, a derived table was created between the two peak tables and set with a mandatory prompt to pull one transformer id.Transmission Work Request (TWR) is a application used by the Transmission Control Center in all Operating Companies of XCEL Energy. It creates requests from Users for the Isolation and Restoration of equipment, mainly in Substations and on Transmission Lines. These TWR¿s are also commonly referred to as ¿Outage Requests¿. This universe points to tables that are near real-time in the application database. Mainly used to join to information in Primavera. ]TWS - Cash transactions data, 
+Source - ILM Repository against archive TWS Application data.TWS Reporting - Currently Long Term Debt - Pre-paid Insurance, etc.
+Source - ILM Repository against archive TWS Application data.cUnbilled Revenue
+Note: Root directories are stand-alone as they are not connected with each other.GUniverse combines the Work order Data with the Desing Enigneering data.1Universe containing passthru data for Chargeback.Universe contains data related to customer programs and related software (called agents) installed on Xcel Energy's smart meters. Database type: PostgreSQL. Source system: Itron (meters) and DIDI database.Universe for JDEdwards General Accounting module, providing summarized general ledger data.  Data source is the JDE Outbound database, which is refreshed nightly.  Contains data from Jan 2001 to current.  This universe contains some forecast and budget information cannot be used in worksheets.
+.venv(base) akash.krishnan@akashkrishnan-MacBook-Pro SAP_to_PBI % 
